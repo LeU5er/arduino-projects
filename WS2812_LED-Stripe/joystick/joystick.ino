@@ -24,8 +24,8 @@ void loop() {
     leds[i].g = 0;
     leds[i].b = 0;
   }
-    int sensorValueA0 = analogRead(A0);  // vor-zurueck
-    int sensorValueA1 = analogRead(A1);  // links-rechts
+    int sensorValueA0 = analogRead(A0);  // FORWARD-BACKWARD
+    int sensorValueA1 = analogRead(A1);  // LEFT-RIGHT
     int tempvar;
     int temppos;
 
