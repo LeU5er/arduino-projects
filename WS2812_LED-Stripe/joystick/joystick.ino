@@ -31,17 +31,17 @@ void loop() {
 
     temppos = sensorValueA0/18;
 
-    //gruen
+    //CHANGE COLOR TO GREEN
     tempvar = 0xFF - sensorValueA1;
     if (tempvar < 0) tempvar = 0;
     leds[temppos].g = tempvar;
     
-    //blau
+    //CHANGE COLOR TO BLUE
     tempvar = 0xFF-(1023-sensorValueA1);
     if (tempvar < 0) tempvar = 0;
     leds[temppos].b = tempvar;
     
-    //rot
+    //CHANGE COLOR TO RED
     if (sensorValueA1 < 512) 
     {
     tempvar = 0xFF-sensorValueA1+512;
