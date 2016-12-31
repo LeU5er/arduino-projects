@@ -9,7 +9,8 @@
 #define SUM_LEDS 60
 #define LED_PIN 6
 #define DELAY_STD 10
-#define BRIGHTNESS_STD 127
+#define DELAY_TURBO 5
+#define BRIGHTNESS_STD 31
 
 CRGBArray<SUM_LEDS> leds;
 
@@ -135,38 +136,34 @@ void loop() {
     leds[i].g = 0;
     FastLED.show();
   }
-  // COLOR RED, BLUE, GREEN FROM 0 TO 60
-  for (int i = 0; i < SUM_LEDS; i++) {
-    leds[i].r = BRIGHTNESS_STD;
-    i++;
-    leds[i].b = BRIGHTNESS_STD;
-    i++;
-    leds[i].g = BRIGHTNESS_STD;
-    FastLED.show();
-    FastLED.delay(100);
-  }
-  // OVERWRITE BRIGHTNESS OF COLORS RED, BLUE, GREEN WITH 0
+  // COLOR RED FROM 0 TO 60
   for(int i = 0; i < SUM_LEDS; i++) {
+    leds[i].r = BRIGHTNESS_STD;    
+    FastLED.show();
+    FastLED.delay(DELAY_TURBO);
     leds[i].r = 0;
-    leds[i].b = 0;
-    leds[i].g = 0;
     FastLED.show();
   }
-  // COLOR RED, BLUE, GREEN FROM 60 TO 0
-  for (int i = SUM_LEDS; i >= 0; i--) {
+  // COLOR RED, BLUE FROM 60 TO 0
+  for(int i = SUM_LEDS; i >= 0; i--) {
     leds[i].r = BRIGHTNESS_STD;
-    i--;
-    leds[i].b = BRIGHTNESS_STD;
-    i--;
-    leds[i].g = BRIGHTNESS_STD;
+    leds[i+1].b = BRIGHTNESS_STD;
     FastLED.show();
-    FastLED.delay(100);
-  }
-  // OVERWRITE BRIGHTNESS OF COLORS RED, BLUE, GREEN WITH 0
-  for(int i = SUM_LEDS; i > 0; i--) {
+    FastLED.delay(DELAY_TURBO);
     leds[i].r = 0;
-    leds[i].b = 0;
-    leds[i].g = 0;
+    leds[i+1].b = 0;
+    FastLED.show();
+  }
+  // COLOR RED, BLUE, GREEN FROM 0 TO 60
+  for(int i = 0; i < SUM_LEDS; i++) {
+    leds[i].r = BRIGHTNESS_STD;
+    leds[i+1].b = BRIGHTNESS_STD;
+    leds[i+2].g = BRIGHTNESS_STD;
+    FastLED.show();
+    FastLED.delay(DELAY_TURBO);
+    leds[i].r = 0;
+    leds[i+1].b = 0;
+    leds[i+2].g = 0;
     FastLED.show();
   }
 }
