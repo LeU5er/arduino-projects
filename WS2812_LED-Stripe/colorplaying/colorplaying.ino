@@ -1,6 +1,4 @@
 //////////////////////////////////////////////////////////
-//// This little program is for Arduino together with ////
-//// the LED-Strip WS2812.                            ////
 //// Copyright: @LeU5er                               ////
 //// EMAIL: publicleu5er@gmail.com                    ////
 //// R4P3.NET: @LeU5er (SUPPORT VIA PM)               ////
@@ -127,5 +125,48 @@ void loop() {
     leds[31+i].b = BRIGHTNESS_STD;    
     FastLED.show();
     delay(DELAY_STD);
+  }
+  
+  // ########## THIRD ANIMATION ##########
+  // OVERWRITE BRIGHTNESS OF COLORS RED, BLUE, GREEN WITH 0
+  for(int i = 0; i < SUM_LEDS; i++) {
+    leds[i].r = 0;
+    leds[i].b = 0;
+    leds[i].g = 0;
+    FastLED.show();
+  }
+  // COLOR RED, BLUE, GREEN FROM 0 TO 60
+  for (int i = 0; i < SUM_LEDS; i++) {
+    leds[i].r = BRIGHTNESS_STD;
+    i++;
+    leds[i].b = BRIGHTNESS_STD;
+    i++;
+    leds[i].g = BRIGHTNESS_STD;
+    FastLED.show();
+    FastLED.delay(100);
+  }
+  // OVERWRITE BRIGHTNESS OF COLORS RED, BLUE, GREEN WITH 0
+  for(int i = 0; i < SUM_LEDS; i++) {
+    leds[i].r = 0;
+    leds[i].b = 0;
+    leds[i].g = 0;
+    FastLED.show();
+  }
+  // COLOR RED, BLUE, GREEN FROM 60 TO 0
+  for (int i = SUM_LEDS; i > 0; i--) {
+    leds[i].r = BRIGHTNESS_STD;
+    i--;
+    leds[i].b = BRIGHTNESS_STD;
+    i--;
+    leds[i].g = BRIGHTNESS_STD;
+    FastLED.show();
+    FastLED.delay(100);
+  }
+  // OVERWRITE BRIGHTNESS OF COLORS RED, BLUE, GREEN WITH 0
+  for(int i = SUM_LEDS; i > 0; i--) {
+    leds[i].r = 0;
+    leds[i].b = 0;
+    leds[i].g = 0;
+    FastLED.show();
   }
 }
