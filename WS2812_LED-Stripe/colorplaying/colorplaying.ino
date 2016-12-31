@@ -153,7 +153,7 @@ void loop() {
     FastLED.show();
   }
   // COLOR RED, BLUE, GREEN FROM 60 TO 0
-  for (int i = SUM_LEDS; i > 0; i--) {
+  for (int i = SUM_LEDS; i >= 0; i--) {
     leds[i].r = BRIGHTNESS_STD;
     i--;
     leds[i].b = BRIGHTNESS_STD;
