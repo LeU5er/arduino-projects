@@ -1,6 +1,4 @@
 //////////////////////////////////////////////////////////
-//// This little program is for Arduino together with ////
-//// the LED-Strip WS2812.                            ////
 //// Copyright: @LeU5er                               ////
 //// EMAIL: publicleu5er@gmail.com                    ////
 //// R4P3.NET: @LeU5er (SUPPORT VIA PM)               ////
