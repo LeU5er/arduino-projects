@@ -1,12 +1,3 @@
-/*
-//////////////////////////////////////////////////////////
-//// Copyright: @LeU5er                               ////
-//// EMAIL: publicleu5er@gmail.com                    ////
-//// R4P3.NET: @LeU5er (SUPPORT VIA PM)               ////
-//// GITHUB: LeU5er                                   ////
-//////////////////////////////////////////////////////////
-*/
-
 #include <FastLED.h>
 #include <animation.h>
 
